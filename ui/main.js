@@ -1,1 +1,2 @@
-console.log('Loaded!');
+//Counter code
+var button =  
