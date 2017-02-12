@@ -49,7 +49,7 @@ submit.onclick = function() {
                     list += '<li>' + name[i] + '</li>';
                 }
                 var ui = document.getElementById('namelist');
-                ui.innerHTML = list;
+                ul.innerHTML = list;
         }
     }
         //Not done yet
