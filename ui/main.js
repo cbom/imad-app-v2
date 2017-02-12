@@ -21,6 +21,6 @@ button.onclick = function () {
         //Not done yet
       };
       //Make the request
-      request.Open('GET', 'http://cbom.imad.hasura-app.io/counter');
+      request.open('GET', 'http://cbom.imad.hasura-app.io/counter');
       request.send(null);
     };
