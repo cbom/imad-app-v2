@@ -1,62 +1,77 @@
-//Counter code
-var button = document.getElementById('counter');
+console.log('Loaded!');
 
-//button.onclick = function () {
+//****************************For counting likes*****************************
+var red= '#FF69B4';
+var like_btn=document.getElementById('like-btn');
+like_btn.onclick=function(){
+  
+    //create request object
     
-    //Create the request object 
-    //var request = new XMLHttpRequest();
-    
-    //Capture the response and store it in a variable
-    //request.onreadystatechange = function()
-    //{
-      //  if (request.readyState === XMLHttpRequest.DONE)
-        //{
-            //Take the action
-          //  if(request.status === 200){
-            //    var counter = request.responseText;
-              //  var span = document.getElementById('count');
-            //span.innerHTML = counter.toString();
-          //}
-        //}
-        //Not done yet
-      //};
-      //Make the request
-     // request.open('GET', 'http://cbom.imad.hasura-app.io/counter');
-      //request.send(null);
-    //};
-
-
-//submit name
-
-var submit = document.getElementById('submit_btn');
-submit.onclick = function() {
-    //Make a request to the server and send the name
-    
-      //Create the request object 
     var request = new XMLHttpRequest();
     
-    //Capture the response and store it in a variable
-    request.onreadystatechange = function()
-    {
-        if (request.readyState === XMLHttpRequest.DONE)
-        {
-            //Take the action
+     //capture and store response into a variable
+     
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+                like_btn.style.color = red ;
+                
+            }
+        }
+        
+    };
+   
+    
+    //make a request to counter endpoint
+    
+    request.open('GET',"https://imad-v2.herokuapp.com/counter",true);
+    request.send(null);
+};
+
+//************************* For Searching Operation *********************/
+
+
+
+var search_btn = document.getElementById('search-btn');
+search_btn.onclick = function(){
+    
+    //create request object
+   
+    var request = new XMLHttpRequest();
+    
+     //capture and store response into a variable
+    var margin_top = 0;
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                //capture the list of names
                 var names = request.responseText;
                 names = JSON.parse(names);
-                var list = '';
-                for(var i=0;i< names.length; i++){
-                    list += '<li>' + names[i] + '</li>';
+                 var list = ' ';
+                for(var i=0;i<names.length;i++){
+                    list += '<li class="w3-animate-left">' + names[i] + '<span onclick="this.parentElement.style.display=\'none\' " class="w3-closebtn w3-margin-right w3-medium">&times;</span></li>';
+                    
                 }
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list;
+                var search_ul=document.getElementById('search-ul');
+                search_ul.innerHTML = list; 
+                var search_span=document.getElementById('search-span');
+                search_span.innerHTML = 'Search Result: ';
+                margin_top+=10+'px';
+                search_span.style.marginTop=margin+top;
+                
         }
+        
     }
-        //Not done yet
-      };
-      //Make the request
-      var nameInput = document.getElementById('name');
-var name = nameInput.value;
-      request.open('GET', 'http://cbom.imad.hasura-app.io/submit-name?name=' + name, true);
-      request.send(null);
+    };
+   
+    
+    //make a request to counter endpoint
+    var search_input = document.getElementById('search-input');
+    var search_val = search_input.value;
+    request.open('GET','https://imad-v2.herokuapp.com/submit-query?name='+search_val,true);
+    request.send(null);
+      
 };
