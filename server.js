@@ -44,14 +44,14 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-var names = [];
-app.get('/submit-name', function (req, res){
+//var names = [];
+//app.get('/submit-name', function (req, res){
     //Get the name from the request
-    var name = req.query.name;
-    names.push(name);
+   // var name = req.query.name;
+    //names.push(name);
     //JSON :javascript Object Notation
-    res.send(JSON.stringify(names));
-});
+    //res.send(JSON.stringify(names));
+//});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
