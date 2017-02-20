@@ -27,7 +27,7 @@ like_btn.onclick=function(){
     
     //make a request to counter endpoint
     
-    request.open('GET',"https://cbom.imad.hasura-app.io/counter",true);
+    request.open('GET',"cbom.imad.hasura-app.io/counter",true);
     request.send(null);
 };
 
