@@ -27,10 +27,10 @@ $(document).ready(function(){
        $('#loader').css({'height':radius,'width':radius});
 
     });
-    $('#profile').css('background-image', 'url("/image/cover.jpg")');
-    $('#blogs').css('background-image', 'url("/image/blogbg.jpg")');
-    $('#contact').css('background-image', 'url("/image/contact.jpg")');
-    $('#compose').css('background-image', 'url("/image/compose.jpg")');
+    $('#profile').css('background-image', 'url("/ui/cover.jpg")');
+    $('#blogs').css('background-image', 'url("/ui/blogbg.jpg")');
+    $('#contact').css('background-image', 'url("/ui/contact.jpg")');
+    $('#compose').css('background-image', 'url("/ui/compose.jpg")');
     $('#feedback-submit').click(function(){$('#contact input,#contact textarea').val('');})
     $("#blogs div#latest>div.panel-body").load('/blogs/latest',function(res,stat,xhr){
     if(xhr.status==200){
