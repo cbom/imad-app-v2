@@ -1,0 +1,126 @@
+
+    
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login | IAS</title>
+        <link href="/ui/style.css" rel="stylesheet" />
+        <link rel="icon" href="/ui/SINGH_ASHUTOSH.jpg">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    </head>
+    <body>
+    <div class="container" >   
+        <div id="logo" class="center" >
+        <table>
+        <tr>
+        <td>
+        <img src="/ui/SINGH_ASHUTOSH.jpg" class="img-medium" align="center" ></td>
+       
+        <td><h2 id="h1" class="center text-big bold" align="center">Internet Advanced Solutions (IAS)</h2><h3 id ="h3" class ="center text-medium bold"> Login Form</h3></td>
+        </tr>
+        </table> 
+        <hr>
+        <pre class="fontcolor1">
+        | <a class ="hyperlinks" href="/">Home</a> | <a class ="hyperlinks" href="/db/6">IAS Code Library</a><hr>
+        </pre>
+       </div>
+       
+        <div id="main" class="center text-big bold">
+        Learning by Sharing
+        </div>
+        <div id="content">
+		<table border="2">
+		<tr><td>Course Duration :</td><td>
+        Linux 4 weeks
+		</td></tr>
+		<tr><td>Start Date :</td><td>
+		 Sun Mar 12 2017
+		 </td></tr>
+	   <tr><td>Fees Rs :</td><td>
+		  4000
+		  </td></tr>
+		  </table>
+        </div>
+        <div>
+        <hr>
+         <p>
+Login and post articles, ask questions or answer to reader's queries.
+<pre>
+username :      <input  id="username" placeholder="username" autofocus>
+
+password :      <input type="password" id="password"><br>
+            <span id="logger"></span><br>
+                 <button id="login_btn">Login</button> 
+</pre>
+<p id="login_area"></p>
+<script>
+ // Submit username/password to login
+    var submit = document.getElementById('login_btn');
+    submit.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  document.getElementById('logger').innerHTML = 'Login Sucess!';
+                  document.getElementById('login_area').innerHTML=LoggedInUser;
+              } else if (request.status === 403) {
+                 document.getElementById('logger').innerHTML  = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                 
+   document.getElementById('logger').innerHTML  = 'Something went wrong ...try after sometime';
+              } 
+            // document.getElementById('login_area').innerHTML=LoggedInUser;
+          }  
+          
+        };
+        
+        // Make the request
+        var username1 = document.getElementById('username').value;
+        var password1 = document.getElementById('password').value;
+        var username = username1.trim();
+        var password = password1.trim();
+        request.open('POST', '/lg/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        document.getElementById('logger').innerHTML  = 'Wait....logging in...';
+
+var LoggedInUser=`
+<a class="hyperlinks1" href="/lo/logout" align="right">Logout</a><br>
+<h3> Hi !<i> ${username} </i> </h3>you are now logged-in to the IAS Forum <br>                                    
+             Pleasse navigate to topic of your interest:  <br>
+
+
+            <ol type="i">
+           <li><a  class="hyperlinks1" href="/1">Back-end Developers:  Node.js, Express.js, Koa.js, RESTful APIs, json, Ajax, PHP ,Python and Ruby.</a></li>
+            <li><a  class="hyperlinks1" href="/2">Front-end Developers:  javaScript, HTML, css, Bootstrap, Sass, JQuery, Backbone, Angular.js & React.js.</a></li>
+            <li><a  class="hyperlinks1" href="/3">Database Developers:  SQL, Data modeling of RDBMS,Database :Installation, Replication, Backups and Sharding.</a></li>
+            </ol>
+</pre>
+`;
+};
+</script>
+</p>
+        <hr>
+        </div>
+           <a class ="hyperlinks1" href="/">Home</a><hr>
+        <div id="feedback" class="fontcolor1">
+            <pre class="text-table">
+            <table   colspan="4">
+                <tr><td>My IT skills</td></tr>
+                <tr><th>Languages            </th><th>Frameworks      </th><th>Front-end              </th><th>Back-end             </th></tr>
+                 <tr><td>C/C++</td><td>Android Studio</td><td>HTML</td><td>Node.js</td></tr>
+                  <tr><td>Swift</td><td>Xcode 8</td><td>CSS</td><td>Express.js</td></tr>
+                   <tr><td>java</td><td>Eclipse IDE</td><td>javaScript</td><td>PHP</td></tr>
+                   <tr><td>Python</td><td>Linux</td><td>Angular JS</td><td>SQL</td></tr>
+                   <tr><td>Sketch</td><td>Arduino IDE</td><td>Bootstrap</td><td>JSP</td></tr>
+                   <tr><td>Embedded C</td><td>XAMPP</td><td>Ajax</td><td>Servlets</td></tr>
+            </table>
+           </pre>
+        </div>
+    </body>
+</html>
