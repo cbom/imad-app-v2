@@ -1,0 +1,119 @@
+
+    
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Form | IAS</title>
+        <link href="/ui/style.css" rel="stylesheet" />
+        <link rel="icon" href="/ui/SINGH_ASHUTOSH.jpg">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    </head>
+    <body>
+    <div class="container" >   
+        <div id="logo" class="center" >
+        <table>
+        <tr>
+        <td>
+        <img src="/ui/SINGH_ASHUTOSH.jpg" class="img-medium" align="center" ></td>
+       
+        <td><h2 id="h1" class="center text-big bold" align="center">Internet Advanced Solutions (IAS)</h2><h3 id ="h3" class ="center text-medium bold"> Registration Form</h3></td>
+        </tr>
+        </table> 
+        <hr>
+        <pre class="fontcolor1">
+        | <a class ="hyperlinks" href="/">Home</a> | <a class ="hyperlinks" href="/db/6">IAS Code Library</a><hr>
+        </pre>
+       </div>
+       
+        <div id="main" class="center text-big bold">
+        Learning by Sharing
+        </div>
+        <div id="content">
+		<table border="2">
+		<tr><td>Course Duration :</td><td>
+        Node & Express js 12 weeks
+		</td></tr>
+		<tr><td>Start Date :</td><td>
+		 Sun Mar 12 2017
+		 </td></tr>
+	   <tr><td>Fees Rs :</td><td>
+		  8100
+		  </td></tr>
+		  </table>
+        </div>
+        <div>
+        <hr>
+         <P>
+<h3>Join  club IAS!</h3>
+
+Be a proud IAS member ! ...   Where  Excellence is a habit <br>
+<pre>
+Select User Name      :<input type="text" placeholder="username" id="username" size="20" autofocus required><br>
+Select Password       :<input type="password" id="password" autofocus ><br>
+
+                    <span id="register"></span><br>
+                            <button id="create">Confirm</button>              <a class ="hyperlinks1" href="/db/9" align="center">Take me to Login Page</a></h4></td></tr>
+</pre>
+<script> 
+
+var reg_btn= document.getElementById('create');
+reg_btn.onclick=function(){
+
+ 
+
+// Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) 
+           {
+                 
+  document.getElementById('register').innerHTML="Welcome to club IAS, go to Login page";
+                
+              }
+            else {
+                 
+                    document.getElementById('register').innerHTML='Oops! Registeration failed';
+                 
+                 }
+          }
+        };
+        
+        // Make the request
+        var username1 = document.getElementById('username').value;
+        var password1 = document.getElementById('password').value;
+        var username = username1.trim();
+        var password = password1.trim();
+        request.open('POST', '/rg/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        document.getElementById('register').innerHTML='Wait... registering...';
+       
+    
+    }
+
+</script>
+</p>
+        <hr>
+        </div>
+           <a class ="hyperlinks1" href="/">Home</a><hr>
+        <div id="feedback" class="fontcolor1">
+            <pre class="text-table">
+            <table   colspan="4">
+                <tr><td>My IT skills</td></tr>
+                <tr><th>Languages            </th><th>Frameworks      </th><th>Front-end              </th><th>Back-end             </th></tr>
+                 <tr><td>C/C++</td><td>Android Studio</td><td>HTML</td><td>Node.js</td></tr>
+                  <tr><td>Swift</td><td>Xcode 8</td><td>CSS</td><td>Express.js</td></tr>
+                   <tr><td>java</td><td>Eclipse IDE</td><td>javaScript</td><td>PHP</td></tr>
+                   <tr><td>Python</td><td>Linux</td><td>Angular JS</td><td>SQL</td></tr>
+                   <tr><td>Sketch</td><td>Arduino IDE</td><td>Bootstrap</td><td>JSP</td></tr>
+                   <tr><td>Embedded C</td><td>XAMPP</td><td>Ajax</td><td>Servlets</td></tr>
+            </table>
+           </pre>
+        </div>
+    </body>
+</html>
