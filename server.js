@@ -18,19 +18,19 @@ app.get('/counter', function (req, res) {
 app.get('/article-one', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 }); 
-app.get('/', function (req,res){ 
+app.get('/ui/5.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '5.html'));
 }); 
-app.get('/', function (req,res){ 
+app.get('/ui/6.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '6.html'));
 }); 
-app.get('/', function (req,res){ 
+app.get('/ui/7.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '7.html'));
 }); 
-app.get('/', function (req,res){ 
+app.get('/ui/8.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '8.html'));
 }); 
-app.get('/', function (req,res){ 
+app.get('/ui/9.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '9.html'));
 }); 
 
