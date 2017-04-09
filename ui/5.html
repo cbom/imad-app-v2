@@ -1,0 +1,100 @@
+
+    
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator | IAS</title>
+        <link href="/ui/style.css" rel="stylesheet" />
+        <link rel="icon" href="/ui/SINGH_ASHUTOSH.jpg">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    </head>
+    <body>
+    <div class="container" >   
+        <div id="logo" class="center" >
+        <table>
+        <tr>
+        <td>
+        <img src="/ui/SINGH_ASHUTOSH.jpg" class="img-medium" align="center" ></td>
+       
+        <td><h2 id="h1" class="center text-big bold" align="center">Internet Advanced Solutions (IAS)</h2><h3 id ="h3" class ="center text-medium bold"> Calculators</h3></td>
+        </tr>
+        </table> 
+        <hr>
+        <pre class="fontcolor1">
+        | <a class ="hyperlinks" href="/">Home</a> | <a class ="hyperlinks" href="/db/6">IAS Code Library</a><hr>
+        </pre>
+       </div>
+       
+        <div id="main" class="center text-big bold">
+        Learning by Sharing
+        </div>
+        <div id="content">
+		<table border="2">
+		<tr><td>Course Duration :</td><td>
+        Android 12 weeks
+		</td></tr>
+		<tr><td>Start Date :</td><td>
+		 Sun Mar 12 2017
+		 </td></tr>
+	   <tr><td>Fees Rs :</td><td>
+		  6000
+		  </td></tr>
+		  </table>
+        </div>
+        <div>
+        <hr>
+        <p>
+<pre>
+                          <h2>Ideal body weight Calculator</h2> 
+Enter your Height in cms:    <input type="int" id="height">cms<br>
+Your ideal weight should be <span id="weight"></span>  Kgs.<br>
+           <button id="weight_btn">Calculate</button>
+<script>
+var weight_btn=document.getElementById("weight_btn");
+
+weight_btn.onclick=function(){
+var height=document.getElementById("height").value;
+var text;
+if (isNaN(height) ) 
+{
+            text=" Sorry ! Input not valid ";
+ }
+ else 
+
+{
+    if(height < 100)
+   {text="Are you an adult?...if yes...sorry you are a dwarf ! ";}
+    else if(height>215)
+    {text="Oops ! you are a gaint.....this is for humans"}
+    else 
+    { var iheight=height-100;
+        text=iheight+" ";
+      
+    }
+}
+document.getElementById("weight").innerHTML=text;
+
+}
+</script>
+</pre>
+</p>
+        <hr>
+        </div>
+           <a class ="hyperlinks1" href="/">Home</a><hr>
+        <div id="feedback" class="fontcolor1">
+            <pre class="text-table">
+            <table   colspan="4">
+                <tr><td>My IT skills</td></tr>
+                <tr><th>Languages            </th><th>Frameworks      </th><th>Front-end              </th><th>Back-end             </th></tr>
+                 <tr><td>C/C++</td><td>Android Studio</td><td>HTML</td><td>Node.js</td></tr>
+                  <tr><td>Swift</td><td>Xcode 8</td><td>CSS</td><td>Express.js</td></tr>
+                   <tr><td>java</td><td>Eclipse IDE</td><td>javaScript</td><td>PHP</td></tr>
+                   <tr><td>Python</td><td>Linux</td><td>Angular JS</td><td>SQL</td></tr>
+                   <tr><td>Sketch</td><td>Arduino IDE</td><td>Bootstrap</td><td>JSP</td></tr>
+                   <tr><td>Embedded C</td><td>XAMPP</td><td>Ajax</td><td>Servlets</td></tr>
+            </table>
+           </pre>
+        </div>
+    </body>
+</html>
