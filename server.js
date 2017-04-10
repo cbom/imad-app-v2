@@ -18,6 +18,19 @@ app.get('/counter', function (req, res) {
 app.get('/article-one', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 }); 
+app.get('/ui/1', function (req,res){ 
+    res.sendFile(path.join(__dirname, 'ui', '1'));
+}); 
+
+app.get('/ui/2', function (req,res){ 
+    res.sendFile(path.join(__dirname, 'ui', '2'));
+}); 
+
+app.get('/ui/3', function (req,res){ 
+    res.sendFile(path.join(__dirname, 'ui', '3'));
+}); 
+
+
 app.get('/ui/5.html', function (req,res){ 
     res.sendFile(path.join(__dirname, 'ui', '5.html'));
 }); 
